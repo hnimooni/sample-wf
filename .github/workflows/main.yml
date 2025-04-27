@@ -1,0 +1,15 @@
+name: My First Workflow   # اسم workflow
+
+on: push                  # چه رویدادی باعث اجرا بشه (اینجا هر بار push کنیم)
+
+jobs:
+  example-job:            # یه اسم دلخواه برای job
+    runs-on: ubuntu-latest # سیستم عامل محیط اجرا (مثلاً لینوکس)
+
+    steps:                # لیست مراحلی که باید انجام بده
+      - uses: actions/checkout@v3
+        # این خط یعنی کد پروژه رو دانلود کن
+
+      - name: Say Hello
+        run: echo "Hello World!"
+        # این خط یعنی یه دستور ساده اجرا کن (تو ترمینال)
